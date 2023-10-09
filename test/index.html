@@ -2,14 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="5;url=https://www.youtube.com/watch?v=YOUR_VIDEO_ID">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting to YouTube</title>
 </head>
 <body>
     <h1>Welcome to the Article</h1>
     <p>This is an article about something interesting.</p>
-    <p>You will be redirected to a YouTube video in 5 seconds...</p>
-    <p>If you are not redirected, <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID">click here</a>.</p>
+    
+    <!-- JavaScript to Check User Agent and Redirect -->
+    <script>
+        var userAgent = navigator.userAgent.toLowerCase();
+        
+        // Check if the user agent contains "telegrambot" (common in Telegram bots)
+        if (userAgent.includes("telegrambot")) {
+            // Do nothing, don't redirect for bots
+            document.write("<p>This content is not available to bots.</p>");
+        } else {
+            // Redirect users to the YouTube video after 5 seconds
+            document.write("<p>You will be redirected to a YouTube video in 5 seconds...</p>");
+            setTimeout(function() {
+                window.location.href = "https://www.youtube.com/watch?v=YOUR_VIDEO_ID";
+            }, 5000);
+        }
+    </script>
+    
+    <!-- Fallback link for users who have disabled JavaScript -->
+    <noscript>
+        <p>If you are not redirected, <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID">click here</a>.</p>
+    </noscript>
 </body>
 </html>
