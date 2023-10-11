@@ -2,22 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
 </head>
 <body>
-    <!-- JavaScript to Check User Agent and Redirect -->
+    <!-- This is a static HTML page for redirection. -->
+    
     <script>
-        var userAgent = navigator.userAgent.toLowerCase();
-        
-        // Check if the user agent contains "telegrambot" (common in Telegram bots)
-        if (userAgent.includes("telegrambot")) {
-            // Permanent Redirect (HTTP 308) for Telegram Bots
-            window.location.replace("https://youtube.com/shorts/sOhaIakG3W8?si=8tWB2w9O6cYMOHeq");
-        } else {
-            // Redirect users to a different link
-            window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-        }
+        // JavaScript-based redirection immediately
+        window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
     </script>
+
+    <!-- HTML-based redirection after a brief delay -->
+    <meta http-equiv="refresh" content="5;url=https://youtube.com/shorts/hWFRla1cceA" />
 </body>
 </html>
